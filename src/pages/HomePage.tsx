@@ -1,27 +1,22 @@
-// src/pages/HomePage.tsx
-
 import React from 'react';
 import useData from '../hooks/getData';
-import ProductContainer from '../containers/ProductContainer';
-
+import BannerHeader from ".././components/atoms/BannerHeader";
+import HomeProductContainer from "../containers/HomeProductContainer";
+import './HomePageStyle.css'; // Yeni stil dosyasını içe aktar
 
 const HomePage: React.FC = () => {
-  const { data, loading, error } = useData();
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
-
+  
   return (
-    <div>
-      {/* <h1> Home [ÜRÜNLER]</h1> */}
-      <ProductContainer />
+    <div className="home-page-container">
+      <BannerHeader />
+      <div className="our-products-container">
+        <h2>Our Products</h2>
+        <HomeProductContainer />
+      </div>
+      <div className="for-more-container">
+        <a href="/explore">For More</a>
+      </div>
     </div>
-
   );
 };
 

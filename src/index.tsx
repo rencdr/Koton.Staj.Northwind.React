@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import CartPage from './pages/CartPage';
 import LoginPage from './pages/LoginPage';
+import ExplorePage from './pages/ExplorePage';
 import Navbar from './components/atoms/Navbar';
 
 const root = ReactDOM.createRoot(
@@ -18,7 +19,7 @@ root.render(
     <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/explore" element={<ExplorePage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>

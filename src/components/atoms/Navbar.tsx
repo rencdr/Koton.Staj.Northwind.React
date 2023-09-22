@@ -6,8 +6,12 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <ul className="navbar-list">
+        
         <li className="navbar-item">
           <Link to="/">Home</Link>
+        </li>
+        <li className="navbar-item">
+          <Link to="/explore">Explore</Link>
         </li>
         <li className="navbar-item">
           <div className="search-bar">

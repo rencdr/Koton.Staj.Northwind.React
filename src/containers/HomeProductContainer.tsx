@@ -4,8 +4,17 @@ import ProductCard from "../components/molecules/ProductCard";
 import { Product } from '../redux/types';
 import "./ProductContainerStyle.css"; 
 
-const ProductContainer = () => {
+const HomeProductContainer = () => {
   const { data, loading, error } = useData();
+
+  const randomProducts = () => {
+    if (data && data.length > 6) {
+      // Rastgele 6 ürün seç
+      return data.sort(() => Math.random() - 0.5).slice(0, 6);
+    } else {
+      return data;
+    }
+  };
 
   if (loading) {
     return <p>Loading...</p>;
@@ -23,7 +32,7 @@ const ProductContainer = () => {
     <div>
       {/* <h1>Ürünler</h1> */}
       <div className="grid">
-        {data.map((product) => (
+        {randomProducts().map((product) => (
           <div key={product.id} className="grid-item">
             <ProductCard product={product} />
           </div>
@@ -33,4 +42,4 @@ const ProductContainer = () => {
   );
 };
 
-export default ProductContainer;
+export default HomeProductContainer;

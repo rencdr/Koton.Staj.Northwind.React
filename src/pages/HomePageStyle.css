@@ -1,0 +1,20 @@
+/* HomePage stil dosyası */
+.home-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* İçerikleri yatayda ortala */
+    text-align: center; /* Metni yatayda ortala */
+  }
+  
+  .our-products-container {
+    margin: 20px 0; /* Ürünlerin üst ve altına boşluk ekleyin */
+    padding: 20px; /* Sayfa içeriğine biraz boşluk ekleyin */
+
+  }
+  
+  .for-more-container {
+    margin-top: 20px; /* "For More" bağlantısının üstüne boşluk ekleyin */
+    padding: 20px; /* Sayfa içeriğine biraz boşluk ekleyin */
+
+  }
+  
