@@ -2,7 +2,7 @@ import React from 'react';
 import useData from '../hooks/getData';
 import BannerHeader from ".././components/atoms/BannerHeader";
 import HomeProductContainer from "../containers/HomeProductContainer";
-import './HomePageStyle.css'; // Yeni stil dosyasını içe aktar
+import './HomePageStyle.css'; 
 
 const HomePage: React.FC = () => {
   
