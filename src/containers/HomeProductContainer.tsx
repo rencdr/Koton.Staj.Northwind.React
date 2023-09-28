@@ -33,7 +33,7 @@ const HomeProductContainer = () => {
       {/* <h1>Ürünler</h1> */}
       <div className="grid">
         {randomProducts().map((product) => (
-          <div key={product.id} className="grid-item">
+          <div key={product.productID} className="grid-item">
             <ProductCard product={product} />
           </div>
         ))}

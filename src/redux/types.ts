@@ -12,7 +12,7 @@ export interface RootState {
 }
 
 export interface Product {
-  id: number;
+  productID: number;
   productName: string;
   categoryName: string;
   unitPrice: number;
@@ -20,7 +20,7 @@ export interface Product {
 }
 
 export interface ProductDto {
-  id: number;
+  productID: number;
   productName: string;
   unitsInStock: number;
   categoryName: string;

@@ -15,15 +15,14 @@ const AuthenticationContainer: React.FC = () => {
     successMessage,
     authenticate,
     register,
-    token,
-    getToken,
+    userId, // uniqueName'i userId olarak kullanın
   } = useAuthentication();
 
   return (
     <div>
       <h2>Kullanıcı Girişi / Kayıt Olma</h2>
       {successMessage && (
-        <p style={{ color: 'green' }}>Hoş geldiniz, {username}! Token: {token}</p>
+        <p style={{ color: 'green' }}>Hoş geldiniz, {userId}!</p>
       )}
       <Input
         type="text"

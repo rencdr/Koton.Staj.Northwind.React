@@ -73,7 +73,7 @@ const ProductContainer = () => {
         </div>
         <div className="products">
           {filteredData.map((product: ProductDto) => (
-            <div key={product.id} className="grid-item">
+            <div key={product.productID} className="grid-item">
               <ProductCard product={product} />
             </div>
           ))}
