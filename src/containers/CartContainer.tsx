@@ -1,16 +1,15 @@
-//CartContainer.tsx
 import React, { useEffect, useState } from 'react';
 import { getCartItemsByUserId } from '../hooks/displayCart';
-import useRemoveCart from '../hooks/removeProductFromCart'; // useRemoveCart Hook'unu içe aktarın
+import { deleteCartByUserId } from '../hooks/deleteCart'; // Import deleteCart hook
 
 const CartContainer: React.FC = () => {
   const [cartItems, setCartItems] = useState<any[]>([]);
   const userId = localStorage.getItem('userId');
-  const { removeProductFromCart } = useRemoveCart(); // useRemoveCart Hook'unu kullanın
+  const productID = 'ürününüzünKimliği'; // Gerçek ürün kimliğinizle değiştirin
 
   useEffect(() => {
     if (userId) {
-      getCartItemsByUserId(userId)
+      getCartItemsByUserId(userId, productID)
         .then((data) => {
           setCartItems(data);
         })
@@ -18,42 +17,37 @@ const CartContainer: React.FC = () => {
           console.error('Sepet içeriği alınırken bir hata oluştu:', error);
         });
     }
-  }, [userId]);
+  }, [userId, productID]); // Bağımlılıklar dizisine productID'yi de eklediğinizden emin olun
 
-  const handleRemoveItem = (productID: number) => {
+  const handleClearCart = () => {
     if (userId) {
-      // Sepetten ürünü kaldırmak için API isteği yapın
-      removeProductFromCart(userId, productID) // useRemoveCart Hook'u ile doğru şekilde çağırın
+      deleteCartByUserId(userId)
         .then(() => {
-          // Başarılı bir şekilde ürün sepetten kaldırıldığında sepet içeriğini güncelleyin
-          getCartItemsByUserId(userId)
-            .then((data) => {
-              setCartItems(data);
-            })
-            .catch((error) => {
-              console.error('Sepet içeriği alınırken bir hata oluştu:', error);
-            });
+          setCartItems([]);
+          console.log('Sepet başarıyla temizlendi.');
         })
         .catch((error) => {
-          console.error('Ürün kaldırma işlemi başarısız:', error);
+          console.error('Sepet temizlenirken bir hata oluştu:', error);
         });
     }
   };
-  
+
   return (
     <div>
       <h2>Sepet İçeriği</h2>
       {cartItems.length === 0 ? (
         <p>Sepetiniz boş.</p>
       ) : (
-        <ul>
-          {cartItems.map((item, index) => (
-            <li key={index}>
-              Ürün Adı: {item.productName}, Miktar: {item.quantity}, Fiyat: ${item.price}
-              <button onClick={() => handleRemoveItem(item.productID)}>Ürünü Kaldır</button>
-            </li>
-          ))}
-        </ul>
+        <div>
+          <button onClick={handleClearCart}>Sepeti Temizle</button>
+          <ul>
+            {cartItems.map((item, index) => (
+              <li key={index}>
+                Ürün Adı: {item.productName}, Miktar: {item.quantity}, Fiyat: ${item.unitPrice}, ID: {item.productId}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );

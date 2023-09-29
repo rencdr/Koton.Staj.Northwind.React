@@ -3,11 +3,10 @@ import axios from 'axios';
 
 const useAddToCart = () => {
   const [notification, setNotification] = useState<string | null>(null);
-  const userId = localStorage.getItem('userId'); // localStorage'dan userId'i alın
+  const userId = localStorage.getItem('userId'); // localStorage'dan userId'i 
 
   const addToCart = async (productName: string, productID: number) => {
     try {
-      // Sepete ürünü ekle işlemleri (Redux kullanarak)
       // Eklenen ürün bildirimi
       if (userId) {
         const response = await axios.post(
@@ -15,7 +14,7 @@ const useAddToCart = () => {
           {
             userId,
             productID,
-            quantity: 1, // Quantity 1 olarak ayarlandı
+            quantity: 1, // Quantity 1 
           }
         );
 
@@ -33,7 +32,6 @@ const useAddToCart = () => {
     }
   };
 
-  // Bildirimi temizle
   const clearNotification = () => {
     setNotification(null);
   };

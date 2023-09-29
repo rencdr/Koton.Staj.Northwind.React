@@ -1,9 +1,9 @@
-//displayCart.ts
+// displayCart.ts
 import axios from 'axios';
 
-export const getCartItemsByUserId = async (userId: string) => {
+export const getCartItemsByUserId = async (userId: string, productID: string) => {
   try {
-    const response = await axios.get(`http://localhost:5221/api/Cart/getCartItemsByUserId?userId=${userId}`);
+    const response = await axios.get(`http://localhost:5221/api/Cart/getCartItemsByUserId?userId=${userId}&productID=${productID}`);
 
     if (response.data.success) {
       return response.data.data; // Sepet içeriği başarıyla alındı
