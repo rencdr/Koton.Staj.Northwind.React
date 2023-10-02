@@ -1,4 +1,4 @@
-// createOrder.js
+// createOrder.ts
 
 import axios from 'axios';
 

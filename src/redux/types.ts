@@ -33,3 +33,12 @@ export interface ResponseModel<T> {
   message: string;
   data: T;
 }
+
+export interface Order {
+  orderId: number;
+  productId: number;
+  quantity: number;
+  userAddress: string;
+  userPhoneNumber: string;
+  orderDate: string;
+}

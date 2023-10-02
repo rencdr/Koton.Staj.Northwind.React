@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { getCartItemsByUserId } from '../hooks/displayCart';
-import { deleteCartByUserId } from '../hooks/deleteCart'; // Import deleteCart hook
+import { deleteCartByUserId } from '../hooks/deleteCart';
+import useRemoveCart from '../hooks/removeProductFromCart'; // Import removeProductFromCart hook
 
 const CartContainer: React.FC = () => {
   const [cartItems, setCartItems] = useState<any[]>([]);
   const userId = localStorage.getItem('userId');
-  const productID = 'ürününüzünKimliği'; // Gerçek ürün kimliğinizle değiştirin
+  const productID = 'ürününKimliği';
 
   useEffect(() => {
     if (userId) {
@@ -17,7 +18,7 @@ const CartContainer: React.FC = () => {
           console.error('Sepet içeriği alınırken bir hata oluştu:', error);
         });
     }
-  }, [userId, productID]); // Bağımlılıklar dizisine productID'yi de eklediğinizden emin olun
+  }, [userId, productID]);
 
   const handleClearCart = () => {
     if (userId) {
@@ -32,6 +33,35 @@ const CartContainer: React.FC = () => {
     }
   };
 
+  const { removeProductFromCart } = useRemoveCart(); // Remove hook'u 
+  const handleRemoveProduct = (productId: number) => {
+    if (userId) {
+      removeProductFromCart(userId, productId)
+        .then((success) => {
+          if (success) {
+            // Ürün başarıyla kaldırıldığında sepeti güncelle
+            const updatedCartItems = cartItems.filter((item) => item.productId !== productId);
+            setCartItems(updatedCartItems);
+            console.log('Ürün başarıyla sepetten kaldırıldı.');
+          } else {
+            console.error('Ürün sepetten kaldırılamadı.');
+          }
+        })
+        .catch((error) => {
+          console.error('Ürün kaldırılırken bir hata oluştu:', error);
+        });
+    }
+  };
+
+  // Sepetteki ürünlerin fiyatlarını toplamak için bir fonksiyon oluşturun
+  const calculateTotalPrice = () => {
+    let totalPrice = 0;
+    for (const item of cartItems) {
+      totalPrice += item.unitPrice * item.quantity;
+    }
+    return totalPrice;
+  };
+
   return (
     <div>
       <h2>Sepet İçeriği</h2>
@@ -44,9 +74,12 @@ const CartContainer: React.FC = () => {
             {cartItems.map((item, index) => (
               <li key={index}>
                 Ürün Adı: {item.productName}, Miktar: {item.quantity}, Fiyat: ${item.unitPrice}, ID: {item.productId}
+                <button onClick={() => handleRemoveProduct(item.productId)}>Ürünü Kaldır</button>
               </li>
             ))}
           </ul>
+          {/* Sepetteki ürünlerin fiyatlarını toplamını görüntüleyin */}
+          <p>Toplam Fiyat: ${calculateTotalPrice()}</p>
         </div>
       )}
     </div>
