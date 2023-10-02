@@ -7,7 +7,7 @@ const useRemoveCart = () => {
     try {
       const response = await axios.delete(`${CART_API_URL}?userId=${userId}&productId=${productId}`);
 
-      return response.data.success; // API yanıtındaki başarı durumunu döndür
+      return response.data.success; // API yanıtı döndür
     } catch (error) {
       throw error;
     }

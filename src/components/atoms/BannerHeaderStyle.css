@@ -1,15 +1,15 @@
 .banner-header {
     background-color: #000000;
     height: 350px;
-    overflow: hidden; /* Resimler taşıdığında kesme yapar */
+    overflow: hidden; 
 
   }
   
   .banner-header img {
-    width: 1500px; /* Genişlik belirli bir boyuta sabitleniyor */
-    height: 350px; /* Banner yüksekliğine uygun olarak ayarlanıyor */
-    display: block; /* Resimleri blok öğe olarak ayarlar */
-    object-fit: cover; /* Resimleri boyutlara sığdırır, taşma olabilir */
+    width: 1500px; 
+    height: 350px; 
+    display: block; 
+    object-fit: cover; 
   }
   
   

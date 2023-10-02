@@ -1,5 +1,4 @@
 
-
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import {ProductDto} from './../redux/types';
@@ -11,7 +10,6 @@ function useData() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Axios ile verileri çek
     axios.get('http://localhost:5221/api/Products/randomList') 
       .then((response) => {
         const responseModel = response.data as ResponseModel<ProductDto[]>;

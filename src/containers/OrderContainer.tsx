@@ -15,11 +15,10 @@ const OrderContainer = () => {
         const response = await createOrder(userId, userAddress, userPhoneNumber);
 
 if (response.success) {
-  const orderId = response.data; // response içinde orderId doğrudan erişilebilir
+  const orderId = response.data; // response içinde orderId doğrudan eriş
   localStorage.setItem('orderId', orderId);
 
   console.log('Sipariş başarıyla oluşturuldu.');
-  // Sipariş başarıyla oluşturulduğunda yapılacak işlemleri burada gerçekleştirin
 } else {
   console.error('Sipariş oluşturulamadı.');
 }

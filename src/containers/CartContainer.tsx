@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getCartItemsByUserId } from '../hooks/displayCart';
 import { deleteCartByUserId } from '../hooks/deleteCart';
-import useRemoveCart from '../hooks/removeProductFromCart'; // Import removeProductFromCart hook
+import useRemoveCart from '../hooks/removeProductFromCart'; 
 
 const CartContainer: React.FC = () => {
   const [cartItems, setCartItems] = useState<any[]>([]);
@@ -33,13 +33,12 @@ const CartContainer: React.FC = () => {
     }
   };
 
-  const { removeProductFromCart } = useRemoveCart(); // Remove hook'u 
+  const { removeProductFromCart } = useRemoveCart(); 
   const handleRemoveProduct = (productId: number) => {
     if (userId) {
       removeProductFromCart(userId, productId)
         .then((success) => {
           if (success) {
-            // Ürün başarıyla kaldırıldığında sepeti güncelle
             const updatedCartItems = cartItems.filter((item) => item.productId !== productId);
             setCartItems(updatedCartItems);
             console.log('Ürün başarıyla sepetten kaldırıldı.');
@@ -53,7 +52,7 @@ const CartContainer: React.FC = () => {
     }
   };
 
-  // Sepetteki ürünlerin fiyatlarını toplamak için bir fonksiyon oluşturun
+  // Sepetteki ürünlerin fiyatlarını topla
   const calculateTotalPrice = () => {
     let totalPrice = 0;
     for (const item of cartItems) {
@@ -78,7 +77,6 @@ const CartContainer: React.FC = () => {
               </li>
             ))}
           </ul>
-          {/* Sepetteki ürünlerin fiyatlarını toplamını görüntüleyin */}
           <p>Toplam Fiyat: ${calculateTotalPrice()}</p>
         </div>
       )}

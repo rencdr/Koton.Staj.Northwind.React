@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./BannerHeaderStyle.css"; // CSS dosyasını içe aktar
+import "./BannerHeaderStyle.css"; 
 
 import bannerImage1 from "../../images/chaibottle1.png";
 import bannerImage2 from "../../images/changbeer.png";

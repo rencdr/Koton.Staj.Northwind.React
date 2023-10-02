@@ -14,7 +14,7 @@ const useAddToCart = () => {
           {
             userId,
             productID,
-            quantity: 1, // Quantity 1 
+            quantity: 1, // Quantity 1 sabit
           }
         );
 

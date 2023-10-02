@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './NavbarStyle.css'; // Stil dosyasını içe aktar
+import './NavbarStyle.css'; 
 
 const Navbar: React.FC = () => {
   return (

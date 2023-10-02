@@ -2,19 +2,19 @@
 .home-page-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* İçerikleri yatayda ortala */
-    text-align: center; /* Metni yatayda ortala */
+    align-items: center; 
+    text-align: center; 
   }
   
   .our-products-container {
-    margin: 20px 0; /* Ürünlerin üst ve altına boşluk ekleyin */
-    padding: 20px; /* Sayfa içeriğine biraz boşluk ekleyin */
+    margin: 20px 0; 
+    padding: 20px; 
 
   }
   
   .for-more-container {
-    margin-top: 20px; /* "For More" bağlantısının üstüne boşluk ekleyin */
-    padding: 20px; /* Sayfa içeriğine biraz boşluk ekleyin */
+    margin-top: 20px; 
+    padding: 20px; 
 
   }
   

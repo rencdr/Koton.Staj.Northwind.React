@@ -17,15 +17,15 @@
     flex: 10;
     margin-right: 10px;
     margin-top: 15px;
-    font-size: 24px; /* Sayfa isimleri için font büyüklüğü ekledik */
-    align-items: center; /* Navbar item'ları dikey olarak ortalamak için ekledik */
+    font-size: 24px; 
+    align-items: center; 
     font-family: "Arial", sans-serif;
     font-weight: bold;
   }
   .navbar-item a {
-    color: black; /* Rengi siyah yaptık */
-    text-decoration: none; /* Alt çizgileri kaldır */
-    align-items: center; /* Navbar item'ları dikey olarak ortalamak için ekledik */
+    color: black; 
+    text-decoration: none; 
+    align-items: center; 
 
   }
   .navbar-item:first-child {

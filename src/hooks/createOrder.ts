@@ -13,7 +13,7 @@ const useCreateOrder = () => {
         userPhoneNumber,
       });
 
-      return response.data; // Sunucudan gelen yanıtı döndürün
+      return response.data; // Sunucudan gelen yanıt
     } catch (error) {
       throw error;
     }

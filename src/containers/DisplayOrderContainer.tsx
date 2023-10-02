@@ -31,7 +31,7 @@ const DisplayOrderContainer = () => {
 
   const fetchOrders = async () => {
     try {
-      const ordersData = await getOrder(userId!); // Non-null assertion operator kullanarak null olmadığına dikkat edin
+      const ordersData = await getOrder(userId!); 
       setOrders(ordersData);
     } catch (error) {
       console.error('Siparişleri alma sırasında bir hata oluştu:', error);
@@ -56,7 +56,7 @@ const DisplayOrderContainer = () => {
     <div>
       <h2>Siparişler</h2>
       <ul>
-        {orders.map((order) => (
+        {orders && orders.map((order) =>  (
           <li key={order.orderId}>
             <p>Sipariş ID: {order.orderId}</p>
             <p>Ürün ID: {order.productId}</p>
