@@ -36,38 +36,38 @@ const AuthenticationContainer: React.FC = () => {
 
   return (
     <div>
-      <h2>Kullanıcı Girişi / Kayıt Olma</h2>
+      <h2>Authentication</h2>
       {successMessage && (
-        <p style={{ color: 'green' }}>Hoş geldiniz, {userId}!</p>
+        <p style={{ color: 'green' }}>Welcome {userId}!</p>
       )}
       {!isAuthenticated && (
         <>
           <Input
             type="text"
-            placeholder="Kullanıcı Adı"
+            placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <Input
             type="password"
-            placeholder="Şifre"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <Button colorScheme="black" onClick={handleLogin}>
-            Giriş Yap
+            Sign In
           </Button>
           <Button colorScheme="black" onClick={register}>
-            Kayıt Ol
+            Sign Up
           </Button>
         </>
       )}
       {isAuthenticated && (
         <Button colorScheme="black" onClick={handleLogout}>
-          Çıkış
+          Sign Out
         </Button>
       )}
-      {loading && <p>Giriş yapılıyor...</p>}
+      {loading && <p>Logging in...</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );

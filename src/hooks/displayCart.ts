@@ -8,10 +8,10 @@ export const getCartItemsByUserId = async (userId: string, productID: string) =>
     if (response.data.success) {
       return response.data.data; // Sepet içeriği başarıyla alındı
     } else {
-      throw new Error('Sepet içeriği alınamadı.');
+      throw new Error('Failed to retrieve cart contents.');
     }
   } catch (error) {
     console.error('Sepet içeriği alınırken bir hata oluştu:', error);
-    throw new Error('Sepet içeriği alınamadı.');
+    throw new Error('Failed to retrieve cart contents.');
   }
 };

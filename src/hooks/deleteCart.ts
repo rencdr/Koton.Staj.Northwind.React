@@ -8,10 +8,10 @@ export const deleteCartByUserId = async (userId: string) => {
     if (response.data.success) {
       console.log('Sepet başarıyla temizlendi.');
     } else {
-      throw new Error('Sepet temizlenirken bir hata oluştu.');
+      throw new Error('An error occurred while clearing the cart.');
     }
   } catch (error) {
     console.error('Sepet temizlenirken bir hata oluştu:', error);
-    throw new Error('Sepet temizlenirken bir hata oluştu.');
+    throw new Error('An error occurred while clearing the cart.');
   }
 };

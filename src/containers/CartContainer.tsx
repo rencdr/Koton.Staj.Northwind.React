@@ -53,7 +53,6 @@ const CartContainer: React.FC = () => {
     }
   };
 
-  // Sepetteki ürünlerin fiyatlarını topla
   const calculateTotalPrice = () => {
     let totalPrice = 0;
     for (const item of cartItems) {
@@ -64,9 +63,9 @@ const CartContainer: React.FC = () => {
 
   return (
     <div>
-      <h2>Sepet İçeriği</h2>
+      <h2>Cart</h2>
       {cartItems.length === 0 ? (
-        <p>Sepetiniz boş.</p>
+        <p>Cart is empty.</p>
       ) : (
         <div>
           <ChakraButton
@@ -74,23 +73,23 @@ const CartContainer: React.FC = () => {
             size="sm"
             onClick={handleClearCart}
           >
-            Sepeti Temizle
+            Clear Cart
           </ChakraButton>
           <ul>
             {cartItems.map((item, index) => (
               <li key={index}>
-                Ürün Adı: {item.productName}, Miktar: {item.quantity}, Fiyat: ${item.unitPrice}, ID: {item.productId}
+                Product Name: {item.productName}, Quantity: {item.quantity}, Price: ${item.unitPrice}, ID: {item.productId}
                 <ChakraButton
                   colorScheme="red"
                   size="sm"
                   onClick={() => handleRemoveProduct(item.productId)}
                 >
-                  Ürünü Kaldır
+                  Remove Product
                 </ChakraButton>
               </li>
             ))}
           </ul>
-          <p>Toplam Fiyat: ${calculateTotalPrice()}</p>
+          <p>Total Price: ${calculateTotalPrice()}</p>
         </div>
       )}
     </div>

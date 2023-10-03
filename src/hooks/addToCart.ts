@@ -3,11 +3,10 @@ import axios from 'axios';
 
 const useAddToCart = () => {
   const [notification, setNotification] = useState<string | null>(null);
-  const userId = localStorage.getItem('userId'); // localStorage'dan userId'i 
+  const userId = localStorage.getItem('userId'); 
 
   const addToCart = async (productName: string, productID: number) => {
     try {
-      // Eklenen ürün bildirimi
       if (userId) {
         const response = await axios.post(
           'http://localhost:5221/api/Cart/addProductToCart',
@@ -19,16 +18,16 @@ const useAddToCart = () => {
         );
 
         if (response.data.success) {
-          setNotification(`"${userId}: ${productName}" + "${productID}"  sepete eklendi.`);
+          setNotification(`"${userId}: ${productName}" + "${productID}"   has been added to the cart.`);
         } else {
-          setNotification('Ürün eklenirken bir hata oluştu.');
+          setNotification('An error occurred while adding the product.');
         }
       } else {
-        setNotification(`"${productName}" + "${productID}"  sepete eklendi.`);
+        setNotification(`"${productName}" + "${productID}"  has been added to the cart.`);
       }
     } catch (error) {
       console.error('Ürün eklenirken bir hata oluştu:', error);
-      setNotification('Ürün eklenirken bir hata oluştu.');
+      setNotification('An error occurred while adding the product.');
     }
   };
 

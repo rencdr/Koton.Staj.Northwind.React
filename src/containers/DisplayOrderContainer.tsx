@@ -55,23 +55,23 @@ const DisplayOrderContainer = () => {
 
   return (
     <div>
-      <h2>Siparişler</h2>
+      <h2>Orders List</h2>
       <ul>
         {orders && orders.map((order) =>  (
           <li key={order.orderId}>
-            <p>Sipariş ID: {order.orderId}</p>
-            <p>Ürün ID: {order.productId}</p>
-            <p>Miktar: {order.quantity}</p>
-            <p>Adres: {order.userAddress}</p>
-            <p>Telefon Numarası: {order.userPhoneNumber}</p>
-            <p>Sipariş Tarihi: {order.orderDate}</p>
+            <p>Order ID: {order.orderId}</p>
+            <p>Product ID: {order.productId}</p>
+            <p>Quantity: {order.quantity}</p>
+            <p>Address: {order.userAddress}</p>
+            <p>Phone Number: {order.userPhoneNumber}</p>
+            <p>Order Date: {order.orderDate}</p>
             
             {/* Siyah Chakra UI düğmesi */}
             <ChakraButton
               colorScheme="black"
               onClick={() => handleCancelOrder(order.orderId)}
             >
-              Siparişi İptal Et
+              Cancel Order
             </ChakraButton>
           </li>
         ))}

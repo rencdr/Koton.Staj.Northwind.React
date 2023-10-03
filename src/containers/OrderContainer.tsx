@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import useCreateOrderHook from '../hooks/createOrder';
-import { Box } from "@chakra-ui/react"; // Box komponentini içe aktarın
+import { Box } from "@chakra-ui/react";
 
 const OrderContainer = () => {
   const [userAddress, setUserAddress] = useState('');
   const [userPhoneNumber, setUserPhoneNumber] = useState('');
   const userId = localStorage.getItem('userId');
+  const [notification, setNotification] = useState({ message: '', isError: false });
 
   const { createOrder } = useCreateOrderHook();
 
@@ -18,24 +19,40 @@ const OrderContainer = () => {
           const orderId = response.data;
           localStorage.setItem('orderId', orderId);
 
+          // Başarılı bildirimi göster
+          setNotification({ message: 'Order has been created successfully', isError: false });
+
           console.log('Sipariş başarıyla oluşturuldu.');
         } else {
+          // Başarısız bildirimi göster
+          setNotification({ message: 'Order creation failed.', isError: true });
+
           console.error('Sipariş oluşturulamadı.');
         }
 
       } catch (error) {
+        // Hata bildirimi göster
+        setNotification({ message: 'An error occurred while creating the order', isError: true });
+
         console.error('Sipariş oluşturulurken bir hata oluştu:', error);
       }
     } else {
+      // Eksik alan bildirimi göster
+      setNotification({ message: 'Please fill in all fields', isError: true });
+
       console.error('Lütfen tüm alanları doldurun.');
     }
   };
-  
+
+  const clearNotification = () => {
+    setNotification({ message: '', isError: false });
+  };
+
   return (
     <div>
-      <h2>Sipariş Ver</h2>
+      <h2>Order</h2>
       <div>
-        <label>Adres:</label>
+        <label>Address:</label>
         <input
           type="text"
           value={userAddress}
@@ -43,14 +60,21 @@ const OrderContainer = () => {
         />
       </div>
       <div>
-        <label>Telefon Numarası:</label>
+        <label>Phone Number:</label>
         <input
           type="text"
           value={userPhoneNumber}
           onChange={(e) => setUserPhoneNumber(e.target.value)}
         />
       </div>
-      
+
+      {/* Bildirim div'i */}
+      {notification.message && (
+        <div className={`notification ${notification.isError ? 'error' : 'success'}`}>
+          {notification.message}
+        </div>
+      )}
+
       {/* Box komponentini kullanarak siyah bir düğme */}
       <Box
         as="button"
@@ -62,7 +86,7 @@ const OrderContainer = () => {
         _hover={{ bg: "gray.800" }}
         onClick={handleOrderSubmit}
       >
-        Sipariş Ver
+        Create Order
       </Box>
     </div>
   );

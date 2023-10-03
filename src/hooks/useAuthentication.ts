@@ -39,7 +39,7 @@ export const useAuthentication = () => {
   
       setToken(receivedToken);
     } else {
-      setError('Kullanıcı adı veya şifre yanlış.');
+      setError('Username or password is incorrect.');
     }
   
     setLoading(false);
@@ -58,9 +58,9 @@ export const useAuthentication = () => {
     });
 
     if (response.data.success) {
-      setSuccessMessage('Kayıt başarıyla oluşturuldu.');
+      setSuccessMessage('Record created successfully.');
     } else {
-      setError('Kayıt olma sırasında bir hata oluştu.');
+      setError('An error occurred while registering.');
     }
 
     setLoading(false);

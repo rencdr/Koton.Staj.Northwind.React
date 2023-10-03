@@ -42,7 +42,7 @@ const ProductContainer = () => {
             onChange={(e) => handleCategoryChange(e.target.value)}
             value={category}
           >
-            <option value="">Tüm Kategoriler</option>
+            <option value="">All Categories</option>
             {categoryOptions.map((categoryOption: string) => (
               <option key={categoryOption} value={categoryOption}>
                 {categoryOption}
@@ -54,7 +54,7 @@ const ProductContainer = () => {
             onChange={(e) => handlePriceRangeChange(e.target.value)}
             value={priceRange}
           >
-            <option value="">Tüm Fiyat Aralıkları</option>
+            <option value="">All Prices</option>
             {priceRangeOptions.map((priceRangeOption: string) => (
               <option key={priceRangeOption} value={priceRangeOption}>
                 {priceRangeOption}
@@ -66,9 +66,9 @@ const ProductContainer = () => {
             onChange={(e) => handleSortChange(e.target.value)}
             value={sort}
           >
-            <option value="">Sıralama</option>
-            <option value="asc">Artan Fiyat</option>
-            <option value="desc">Azalan Fiyat</option>
+            <option value="">Best Match</option>
+            <option value="asc">Price Low</option>
+            <option value="desc">Price High</option>
           </select>
         </div>
         <div className="products">
