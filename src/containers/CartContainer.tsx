@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getCartItemsByUserId } from '../hooks/displayCart';
 import { deleteCartByUserId } from '../hooks/deleteCart';
-import useRemoveCart from '../hooks/removeProductFromCart'; 
+import useRemoveCart from '../hooks/removeProductFromCart';
+import { Button as ChakraButton } from '@chakra-ui/react'; // Chakra UI'den Button komponentini içe aktarın
 
 const CartContainer: React.FC = () => {
   const [cartItems, setCartItems] = useState<any[]>([]);
@@ -33,7 +34,7 @@ const CartContainer: React.FC = () => {
     }
   };
 
-  const { removeProductFromCart } = useRemoveCart(); 
+  const { removeProductFromCart } = useRemoveCart();
   const handleRemoveProduct = (productId: number) => {
     if (userId) {
       removeProductFromCart(userId, productId)
@@ -68,12 +69,24 @@ const CartContainer: React.FC = () => {
         <p>Sepetiniz boş.</p>
       ) : (
         <div>
-          <button onClick={handleClearCart}>Sepeti Temizle</button>
+          <ChakraButton
+            colorScheme="red"
+            size="sm"
+            onClick={handleClearCart}
+          >
+            Sepeti Temizle
+          </ChakraButton>
           <ul>
             {cartItems.map((item, index) => (
               <li key={index}>
                 Ürün Adı: {item.productName}, Miktar: {item.quantity}, Fiyat: ${item.unitPrice}, ID: {item.productId}
-                <button onClick={() => handleRemoveProduct(item.productId)}>Ürünü Kaldır</button>
+                <ChakraButton
+                  colorScheme="red"
+                  size="sm"
+                  onClick={() => handleRemoveProduct(item.productId)}
+                >
+                  Ürünü Kaldır
+                </ChakraButton>
               </li>
             ))}
           </ul>

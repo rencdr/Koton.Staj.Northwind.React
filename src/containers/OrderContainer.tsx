@@ -1,6 +1,6 @@
-//OrderContainer.tsx
 import React, { useState } from 'react';
 import useCreateOrderHook from '../hooks/createOrder';
+import { Box } from "@chakra-ui/react"; // Box komponentini içe aktarın
 
 const OrderContainer = () => {
   const [userAddress, setUserAddress] = useState('');
@@ -14,14 +14,14 @@ const OrderContainer = () => {
       try {
         const response = await createOrder(userId, userAddress, userPhoneNumber);
 
-if (response.success) {
-  const orderId = response.data; // response içinde orderId doğrudan eriş
-  localStorage.setItem('orderId', orderId);
+        if (response.success) {
+          const orderId = response.data;
+          localStorage.setItem('orderId', orderId);
 
-  console.log('Sipariş başarıyla oluşturuldu.');
-} else {
-  console.error('Sipariş oluşturulamadı.');
-}
+          console.log('Sipariş başarıyla oluşturuldu.');
+        } else {
+          console.error('Sipariş oluşturulamadı.');
+        }
 
       } catch (error) {
         console.error('Sipariş oluşturulurken bir hata oluştu:', error);
@@ -50,7 +50,20 @@ if (response.success) {
           onChange={(e) => setUserPhoneNumber(e.target.value)}
         />
       </div>
-      <button onClick={handleOrderSubmit}>Sipariş Ver</button>
+      
+      {/* Box komponentini kullanarak siyah bir düğme */}
+      <Box
+        as="button"
+        bg="black"
+        color="white"
+        px={4}
+        py={2}
+        borderRadius="md"
+        _hover={{ bg: "gray.800" }}
+        onClick={handleOrderSubmit}
+      >
+        Sipariş Ver
+      </Box>
     </div>
   );
 };

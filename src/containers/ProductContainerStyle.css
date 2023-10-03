@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
-  margin-top: 50px;
+  margin-top: 12px;
 }
 
 .grid-item {
@@ -16,12 +16,8 @@
   flex-direction: row;
   justify-content: center; 
   align-items: center; 
-  margin-bottom: 5px;
-}
-
-.filter-bar select,
-.filter-bar button {
-  margin: 0 150px; 
+  margin-bottom: 1px;
+  margin-top: 1px;
 }
 
 .products {
@@ -29,4 +25,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; 
   grid-gap: 10px;
+}
+
+.filter-bar select,
+.filter-bar button {
+  margin: 0 135px;
+  background-color: black; /* Arka plan rengini siyah olarak ayarlayın */
+  color: white; /* Metin rengini beyaz yapın */
+  border: none; /* Kenarlığı kaldırın veya gerektiğiniz gibi özelleştirin */
+  padding: 12px 15px; /* Dolgu ayarlarını gerektiğiniz gibi ayarlayın */
 }

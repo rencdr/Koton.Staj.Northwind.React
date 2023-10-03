@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import getOrder from '../hooks/getOrder';
 import useCancelOrder from '../hooks/cancelOrder';
+import { Button as ChakraButton } from '@chakra-ui/react'; // Chakra UI'den Button komponentini içe aktarın
 
 interface Order {
   orderId: number;
@@ -64,7 +65,14 @@ const DisplayOrderContainer = () => {
             <p>Adres: {order.userAddress}</p>
             <p>Telefon Numarası: {order.userPhoneNumber}</p>
             <p>Sipariş Tarihi: {order.orderDate}</p>
-            <button onClick={() => handleCancelOrder(order.orderId)}>Siparişi İptal Et</button>
+            
+            {/* Siyah Chakra UI düğmesi */}
+            <ChakraButton
+              colorScheme="black"
+              onClick={() => handleCancelOrder(order.orderId)}
+            >
+              Siparişi İptal Et
+            </ChakraButton>
           </li>
         ))}
       </ul>

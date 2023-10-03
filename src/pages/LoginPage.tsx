@@ -5,7 +5,7 @@ import AuthenticationContainer from '../containers/AuthenticationContainer';
 const LoginPage: React.FC = () => {
   return (
     <div>
-      <h1>Login [GİRİŞ YAP / KAYIT OL]</h1>
+      {/* <h1>Login [GİRİŞ YAP / KAYIT OL]</h1> */}
       <AuthenticationContainer /> {/* Giriş formu */}
     </div>
   );

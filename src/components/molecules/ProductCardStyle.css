@@ -13,6 +13,13 @@
   }
   
   .notification {
-    color: red;
+    color: rgb(0, 0, 0);
   }
-  
+
+  .black-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}

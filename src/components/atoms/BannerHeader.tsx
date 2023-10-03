@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./BannerHeaderStyle.css"; 
 
-import bannerImage1 from "../../images/chaibottle1.png";
-import bannerImage2 from "../../images/changbeer.png";
+import bannerImage1 from "../../images/BlackF.jpeg";
+import bannerImage2 from "../../images/Healthy.jpeg";
+import bannerImage3 from "../../images/Christ.jpeg";
 
-const images = [bannerImage1, bannerImage2];
+
+const images = [bannerImage1, bannerImage2, bannerImage3];
 
 const BannerHeader: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

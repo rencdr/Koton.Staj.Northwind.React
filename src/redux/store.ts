@@ -1,8 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './reducers/ProductReducer';
+import loginReducer from './reducers/AuthReducer';
+import { combineReducers } from 'redux';
+
+
+export type RootState = ReturnType<typeof rootReducerCombined>;
+
+const rootReducerCombined = combineReducers({
+  auth: loginReducer,
+});
 
 const store = configureStore({
-  reducer: rootReducer,
+  reducer: rootReducerCombined,
 });
 
 export default store;
