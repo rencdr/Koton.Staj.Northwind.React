@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <Flex as="nav" align="center" justify="space-between" p="4" borderBottom="1px solid #ccc">
+    <Flex as="nav" align="center" justify="space-between" p="4" borderBottom="1px solid #ccc" background-color="#f8bb4b" >
       <Breadcrumb separator="|">
         <BreadcrumbItem>
           <Link to="/" style={linkStyle}>
@@ -28,14 +28,14 @@ const Navbar: React.FC = () => {
       </Breadcrumb>
 
       {/* Resmi burada görüntüleyin */}
-      <Image src={northlogofast} alt="Northwind Traders" width="250px" height="auto" />
+      <Image src={northlogofast} alt="Northwind Traders" width="300px" height="auto" />
 
       <Flex align="center">
         <Link to="/cart" style={{ marginRight: '30px' }}>
-          <Image src={carticon} alt="Cart" width="32px" height="32px" />
+          <Image src={carticon} alt="Cart" width="34px" height="34px" />
         </Link>
-        <Link to="/login" style={{ marginRight: '20px' }}>
-          <Image src={authicon} alt="Login" width="32px" height="32px" />
+        <Link to="/login" style={{ marginRight: '30px' }}>
+          <Image src={authicon} alt="Login" width="34px" height="34px" />
         </Link>
       </Flex>
     </Flex>

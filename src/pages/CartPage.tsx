@@ -13,7 +13,7 @@ const CartPage: React.FC = () => {
         </div>
        
         <OrderContainer />
-        <div style={{ paddingRight: '30px' }}>
+        <div style={{ paddingRight: '100px' }}>
           <DisplayOrderContainer />
         </div>
       </div>

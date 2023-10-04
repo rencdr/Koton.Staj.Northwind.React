@@ -17,6 +17,8 @@ export interface Product {
   categoryName: string;
   unitPrice: number;
   description: string;
+  images?: string[]; // VARBINARY(MAX) verisini ArrayBuffer veya null olarak saklayabilirsiniz.
+
 }
 
 export interface ProductDto {
@@ -26,6 +28,8 @@ export interface ProductDto {
   categoryName: string;
   description: string;
   unitPrice: number;
+  Images: ArrayBuffer | null; // VARBINARY(MAX) verisini ArrayBuffer veya null olarak saklayabilirsiniz.
+
 }
 
 export interface ResponseModel<T> {

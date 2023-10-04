@@ -1,8 +1,8 @@
 import React from "react";
-import { Box } from "@chakra-ui/react"; // Box komponentini içe aktarın
+import { Box } from "@chakra-ui/react";
 import useAddToCart from "../../hooks/addToCart";
 import { Product } from "../../redux/types";
-import "./ProductCardStyle.css"; // CSS dosyasını içe aktar
+import "./ProductCardStyle.css";
 import { useAuthentication } from "../../hooks/useAuthentication";
 
 const ProductCard = ({ product }: { product: Product }) => {
@@ -15,16 +15,17 @@ const ProductCard = ({ product }: { product: Product }) => {
 
   return (
     <div className="product-card">
-      {/* Ürün resmini ekle */}
-      {/* <img src={product.imageUrl} alt={product.productName} /> */}
+      <img className="img-fixed-size"
+      src={`data:image/jpeg;base64,${product.images}`}
+      alt={product.productName}
+      />
+
 
       <h2>{product.productName}</h2>
       <p>Category: {product.categoryName}</p>
-      {/* <p>ID: {product.productID}</p> */}
-      <p>Price: ${product.unitPrice}</p> {/* Başına dolar işareti ekle */}
+      <p>Price: ${product.unitPrice}</p>
       <p>Description: {product.description}</p>
 
-      {/* Box komponentini kullanarak düzeltilmiş buton */}
       <Box
         as="button"
         bg="black"

@@ -6,6 +6,9 @@
     border: 1px solid black;
     transition: background-color 0.3s;
     background-color: #FFA500;
+    max-width: 100%;
+    height: auto;
+    
   }
   
   .product-card:hover {
@@ -22,4 +25,10 @@
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+}
+/* ProductCardStyle.css veya uygun stil dosyanızda */
+
+.img-fixed-size {
+  width: 370px; /* Genişlik belirtilen piksel cinsinden olacak */
+  height: 350px; /* Yükseklik belirtilen piksel cinsinden olacak */
 }

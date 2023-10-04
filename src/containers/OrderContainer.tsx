@@ -50,7 +50,7 @@ const OrderContainer = () => {
 
   return (
     <div>
-      <h2>Order</h2>
+      <h2>Create Order</h2>
       <div>
         <label>Address:</label>
         <input
