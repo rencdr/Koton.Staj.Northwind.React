@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { getCartItemsByUserId } from '../hooks/displayCart';
 import { deleteCartByUserId } from '../hooks/deleteCart';
 import useRemoveCart from '../hooks/removeProductFromCart';
-import { Button as ChakraButton } from '@chakra-ui/react'; // Chakra UI'den Button komponentini içe aktarın
+import { Button as ChakraButton } from '@chakra-ui/react'; 
+import DisplayCartCard from '../components/molecules/DisplayCartCard';
+import './CartContainerStyle.css';
 
 const CartContainer: React.FC = () => {
   const [cartItems, setCartItems] = useState<any[]>([]);
@@ -62,38 +64,37 @@ const CartContainer: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="cart-container">
       <h2>Cart</h2>
       {cartItems.length === 0 ? (
         <p>Cart is empty.</p>
       ) : (
         <div>
-          <ChakraButton
-            colorScheme="red"
-            size="sm"
+         
+          <div className="cart-items">
+            {cartItems.map((item) => (
+              <DisplayCartCard
+                key={item.productId}
+                productName={item.productName}
+                quantity={item.quantity}
+                unitPrice={item.unitPrice}
+                productId={item.productId}
+                onRemoveProduct={handleRemoveProduct}
+              />
+            ))}
+          </div>
+          <p className="total-price">Total Price: ${calculateTotalPrice()}</p>
+          <button
+            className="clear-cart-button"
             onClick={handleClearCart}
           >
             Clear Cart
-          </ChakraButton>
-          <ul>
-            {cartItems.map((item, index) => (
-              <li key={index}>
-                Product Name: {item.productName}, Quantity: {item.quantity}, Price: ${item.unitPrice}, ID: {item.productId}
-                <ChakraButton
-                  colorScheme="red"
-                  size="sm"
-                  onClick={() => handleRemoveProduct(item.productId)}
-                >
-                  Remove Product
-                </ChakraButton>
-              </li>
-            ))}
-          </ul>
-          <p>Total Price: ${calculateTotalPrice()}</p>
+          </button>
         </div>
       )}
     </div>
   );
+  
 };
 
 export default CartContainer;

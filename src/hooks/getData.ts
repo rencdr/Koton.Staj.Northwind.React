@@ -14,8 +14,6 @@ function useData() {
       .then((response) => {
         const responseModel = response.data as ResponseModel<ProductDto[]>;
         if (responseModel.success) {
-          // Images verisini kullanarak görselleri işleyin
-          // Örneğin, base64 formatına dönüştürebilir ve bir <img> öğesi içinde gösterebilirsiniz.
           const productsWithImages = responseModel.data.map((product) => {
             const imageSrc = product.Images
               ? `data:image/jpeg;base64,${btoa(String.fromCharCode(...Array.from(new Uint8Array(product.Images))))}`

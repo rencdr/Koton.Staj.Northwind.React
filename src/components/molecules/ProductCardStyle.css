@@ -5,14 +5,16 @@
     margin: 10px;
     border: 1px solid black;
     transition: background-color 0.3s;
-    background-color: #FFA500;
+    background-color: #ffffff;
     max-width: 100%;
     height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     
   }
   
   .product-card:hover {
-    background-color: #f8bb4b;
+    background-color: #c9c9c9;
   }
   
   .notification {
@@ -20,15 +22,51 @@
   }
 
   .black-button {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
+    background-color: transparent; 
+    color: rgb(0, 0, 0);
+    border: 2px solid black; 
+    padding: 10px 80px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, border-color 0.3s; 
+ 
+  }
+.black-button:hover {
+  background-color: black; 
+  color: white; 
+  border-color: transparent; 
 }
-/* ProductCardStyle.css veya uygun stil dosyanızda */
 
 .img-fixed-size {
-  width: 370px; /* Genişlik belirtilen piksel cinsinden olacak */
-  height: 350px; /* Yükseklik belirtilen piksel cinsinden olacak */
+  width: 370px; 
+  height: 350px; 
+}
+
+
+.quantity-button {
+  border-radius: 8px; 
+  padding: 2px; 
+  
+  
+  padding: 12px 20px;
+  border: 2px solid black; 
+  cursor: pointer;
+  margin-left: 2px;
+  background-color: transparent; 
+
+  transition: background-color 0.3s, border-color 0.3s; 
+
+
+
+}
+.quantity-button:hover{
+  background-color: black; /* Üzerine gelindiğinde arka planı siyaha dönüştürün */
+  color: white; /* Üzerine gelindiğinde metni beyaz yapın */
+  border-color: transparent; /* Üzerine gelindiğinde çerçeve rengini şeffaf yapın */
+}
+.quantity-span {
+  font-size: 18px; /* Rakamın yazı tipi boyutunu ayarlayın */
+  margin: 1px; /* Rakamın etrafındaki kenar boşluğunu ayarlayın */
+  font-weight: bold; /* Rakamı kalın yapın */
+
 }

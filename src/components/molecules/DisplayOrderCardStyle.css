@@ -1,0 +1,36 @@
+/* DisplayOrderContainerStyle.css */
+.order-card {
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(255, 252, 252, 0.1);
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.order-card p {
+  margin: 4px 0;
+}
+
+.order-card button {
+  border-radius: 8px;
+  padding: 2px;
+  padding: 12px 20px;
+  border: 2px solid black;
+  cursor: pointer;
+  margin-left: 2px;
+  color: white;
+  background-color: black;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.order-card button:hover {
+  background-color: black;
+  color: white;
+  border-color: transparent;
+}
+
+.order-card p {
+  color: black;
+}
+

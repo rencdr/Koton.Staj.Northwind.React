@@ -1,12 +1,33 @@
-/* Navbar için CSS */
-.navbar {
-    background-color: #f8bb4b;
-    color: #000000;
-    padding: 5px;
-    position: relative;
-    top: 0; 
-    width: 100%;
-    max-width: none;
+/* navbar.css */
 
-  }
+.navbar {
+  color: #000000;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: none;
+  background-color: white;
+}
+
+.navbar-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
   
+}
+.navbar-link.navbar-link-explore {
+  font-size: 20px; 
+}
+
+.cart-image {
+  width: 34px;
+  height: 34px;
+  margin-right: 40px;
+}
+.auth-image {
+  width: 34px;
+  height: 34px;
+  margin-right: 40px;
+}
+

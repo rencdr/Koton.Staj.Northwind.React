@@ -14,7 +14,7 @@ export const useAuthentication = () => {
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [token, setToken] = useState<string | null>(null);
-  const [userId, setUserId] = useState<string | null>(null); // uniqueName'i userId olarak değiştirin
+  const [userId, setUserId] = useState<string | null>(null); // uniqueName'i userId olarak değiştir
 
   const authenticate = async () => {
     setLoading(true);
@@ -32,7 +32,7 @@ export const useAuthentication = () => {
       // Tokeni decode et ve unique name'i `userId` değişkenine kaydet.
       const decodedToken = jwtDecode(receivedToken) as { unique_name: string } | null;
       if (decodedToken && decodedToken.unique_name) {
-        setUserId(decodedToken.unique_name); // uniqueName'i userId olarak değiştirin
+        setUserId(decodedToken.unique_name); 
         // userId'yi localStorage'a kaydet
         localStorage.setItem('userId', decodedToken.unique_name);
       }
@@ -78,6 +78,6 @@ export const useAuthentication = () => {
     register,
     token,
     getToken,
-    userId, // uniqueName'i userId olarak değiştirin
+    userId, 
   };
 };

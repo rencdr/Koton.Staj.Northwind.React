@@ -1,12 +1,24 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useAuthentication } from '../hooks/useAuthentication';
-import { Button } from '@chakra-ui/react'; 
-import Input from '../components/atoms/Input';
-import { login, logout } from '../redux/actions/AuthActions';
-import { RootState } from '../redux/store';
+// AuthenticationCard.tsx
 
-const AuthenticationContainer: React.FC = () => {
+import React from 'react';
+import { Button } from '@chakra-ui/react'; 
+import Input from '../atoms/Input';
+import { useAuthentication } from '../../hooks/useAuthentication';
+import './AuthenticationCardStyle.css'; 
+
+interface AuthenticationCardProps {
+  isAuthenticated: boolean;
+  onLogin: () => void;
+  onLogout: () => void;
+  onRegister: () => void;
+}
+
+const AuthenticationCard: React.FC<AuthenticationCardProps> = ({
+  isAuthenticated,
+  onLogin,
+  onLogout,
+  onRegister,
+}) => {
   const {
     username,
     setUsername,
@@ -15,27 +27,11 @@ const AuthenticationContainer: React.FC = () => {
     loading,
     error,
     successMessage,
-    authenticate,
-    register,
     userId,
   } = useAuthentication();
 
-  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
-  const dispatch = useDispatch();
-
-  const handleLogin = () => {
-    const actualUserId = userId || '';
-    dispatch(login({ userId: actualUserId, username, password }));
-    authenticate();
-  };
-
-  const handleLogout = () => {
-    dispatch(logout());
-    localStorage.removeItem('userId');
-  };
-
   return (
-    <div>
+    <div className="authentication-card">
       <h2>Authentication</h2>
       {successMessage && (
         <p style={{ color: 'green' }}>Welcome {userId}!</p>
@@ -54,16 +50,16 @@ const AuthenticationContainer: React.FC = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button colorScheme="black" onClick={handleLogin}>
+          <Button colorScheme="black" onClick={onLogin}>
             Sign In
           </Button>
-          <Button colorScheme="black" onClick={register}>
+          <Button colorScheme="black" onClick={onRegister}>
             Sign Up
           </Button>
         </>
       )}
       {isAuthenticated && (
-        <Button colorScheme="black" onClick={handleLogout}>
+        <Button colorScheme="black" onClick={onLogout}>
           Sign Out
         </Button>
       )}
@@ -73,4 +69,4 @@ const AuthenticationContainer: React.FC = () => {
   );
 };
 
-export default AuthenticationContainer;
+export default AuthenticationCard;

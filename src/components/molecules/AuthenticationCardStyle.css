@@ -1,0 +1,34 @@
+/* AuthenticationCardStyle.css */
+
+.authentication-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 16px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .authentication-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  
+  .authentication-card input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .authentication-card button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .authentication-card button:hover {
+    background-color: gray;
+  }
+  

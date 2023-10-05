@@ -30,8 +30,17 @@
 .filter-bar select,
 .filter-bar button {
   margin: 0 135px;
-  background-color: black; /* Arka plan rengini siyah olarak ayarlayın */
-  color: white; /* Metin rengini beyaz yapın */
-  border: none; /* Kenarlığı kaldırın veya gerektiğiniz gibi özelleştirin */
-  padding: 12px 15px; /* Dolgu ayarlarını gerektiğiniz gibi ayarlayın */
+  margin-top: 15px;
+  background-color: black; 
+  color: white; 
+  border: none; 
+  padding: 8px 25px; 
+  border-radius: 8px;
+  transition: background-color 0.3s, border-color 0.3s; 
+  cursor: pointer;
+}
+.filter-bar button:hover{
+  background-color: black; 
+  color: white; 
+  border-color: transparent; 
 }

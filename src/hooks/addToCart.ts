@@ -3,9 +3,10 @@ import axios from 'axios';
 
 const useAddToCart = () => {
   const [notification, setNotification] = useState<string | null>(null);
-  const userId = localStorage.getItem('userId'); 
+  const [quantity, setQuantity] = useState<number>(1); // Başlangıçta 1 ürün
+  const userId = localStorage.getItem('userId');
 
-  const addToCart = async (productName: string, productID: number) => {
+  const addToCart = async (productName: string, productID: number, quantity: number) => {
     try {
       if (userId) {
         const response = await axios.post(
@@ -13,21 +14,31 @@ const useAddToCart = () => {
           {
             userId,
             productID,
-            quantity: 1, // Quantity 1 sabit
+            quantity, 
           }
         );
 
         if (response.data.success) {
-          setNotification(`"${userId}: ${productName}" + "${productID}"   has been added to the cart.`);
+          setNotification(`"${userId}: ${productName}" + "${productID}" has been added to the cart.`);
         } else {
           setNotification('An error occurred while adding the product.');
         }
       } else {
-        setNotification(`"${productName}" + "${productID}"  has been added to the cart.`);
+        setNotification(`"${productName}" + "${productID}" has been added to the cart.`);
       }
     } catch (error) {
       console.error('Ürün eklenirken bir hata oluştu:', error);
       setNotification('An error occurred while adding the product.');
+    }
+  };
+
+  const increaseQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const decreaseQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
     }
   };
 
@@ -40,6 +51,9 @@ const useAddToCart = () => {
     notification,
     clearNotification,
     userId,
+    quantity,
+    increaseQuantity,
+    decreaseQuantity,
   };
 };
 

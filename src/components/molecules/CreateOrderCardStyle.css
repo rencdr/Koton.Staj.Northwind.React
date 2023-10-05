@@ -1,0 +1,37 @@
+.create-order-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 16px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.create-order-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.create-order-card label {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.create-order-card input {
+  width: 100%;
+  max-width: 400px; 
+  height: 20px; 
+  padding: 1px;
+  margin-bottom: 8px;
+}
+
+
+.create-order-card button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+

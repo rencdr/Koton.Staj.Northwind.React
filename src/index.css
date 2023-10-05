@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FFA500;
+  background-color: #ffffff;
+  margin-top: 95px; /* Navbar'ın kapladığı alan kadar boşluk bırak */
 
 }
 

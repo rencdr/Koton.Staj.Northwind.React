@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import getOrder from '../hooks/getOrder';
 import useCancelOrder from '../hooks/cancelOrder';
-import { Button as ChakraButton } from '@chakra-ui/react'; // Chakra UI'den Button komponentini içe aktarın
+import { Button as ChakraButton } from '@chakra-ui/react'; 
+import DisplayOrderCard from "../components/molecules/DisplayOrderCard";
 
 interface Order {
   orderId: number;
@@ -56,26 +57,13 @@ const DisplayOrderContainer = () => {
   return (
     <div>
       <h2>Orders List</h2>
-      <ul>
-        {orders && orders.map((order) =>  (
-          <li key={order.orderId}>
-            <p>Order ID: {order.orderId}</p>
-            <p>Product ID: {order.productId}</p>
-            <p>Quantity: {order.quantity}</p>
-            <p>Address: {order.userAddress}</p>
-            <p>Phone Number: {order.userPhoneNumber}</p>
-            <p>Order Date: {order.orderDate}</p>
-            
-            {/* Siyah Chakra UI düğmesi */}
-            <ChakraButton
-              colorScheme="black"
-              onClick={() => handleCancelOrder(order.orderId)}
-            >
-              Cancel Order
-            </ChakraButton>
-          </li>
-        ))}
-      </ul>
+      {orders && orders.map((order) => (
+        <DisplayOrderCard
+          key={order.orderId}
+          order={order}
+          onCancelOrder={handleCancelOrder}
+        />
+      ))}
     </div>
   );
 };
