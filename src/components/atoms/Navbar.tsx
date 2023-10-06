@@ -8,12 +8,12 @@ import './NavbarStyle.css';
 
 const Navbar: React.FC = () => {
   return (
-    <Flex as="nav" align="center" justify="space-between" p="4" borderBottom="1px solid #ccc" className="navbar">
+    <Flex as="nav" align="center" justify="space-between" p="4" borderBottom="1px solid #ccc" className="navbar" zIndex={1}>
       <Breadcrumb separator="|">
         <BreadcrumbItem>
           <Link to="/" className="navbar-link">
             <BreadcrumbLink>
-              <img src={northlogofast} alt="Northwind Traders" width="250px" height="auto" />
+              <img src={northlogofast} alt="Northwind Traders" width="200px" height="auto" />
             </BreadcrumbLink>
           </Link>
         </BreadcrumbItem>

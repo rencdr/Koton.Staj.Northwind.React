@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import getOrder from '../hooks/getOrder';
 import useCancelOrder from '../hooks/cancelOrder';
-import { Button as ChakraButton } from '@chakra-ui/react'; 
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  Box,
+  Button as ChakraButton,
+} from '@chakra-ui/react';
 import DisplayOrderCard from "../components/molecules/DisplayOrderCard";
 
 interface Order {
@@ -33,7 +40,7 @@ const DisplayOrderContainer = () => {
 
   const fetchOrders = async () => {
     try {
-      const ordersData = await getOrder(userId!); 
+      const ordersData = await getOrder(userId!);
       setOrders(ordersData);
     } catch (error) {
       console.error('Siparişleri alma sırasında bir hata oluştu:', error);
@@ -57,13 +64,36 @@ const DisplayOrderContainer = () => {
   return (
     <div>
       <h2>Orders List</h2>
-      {orders && orders.map((order) => (
-        <DisplayOrderCard
-          key={order.orderId}
-          order={order}
-          onCancelOrder={handleCancelOrder}
-        />
-      ))}
+      <Accordion allowMultiple>
+        <AccordionItem>
+          <h2>
+          <AccordionButton
+  style={{
+    backgroundColor: 'black',
+    color: 'white',
+    border: 'none',
+    borderRadius: '4px',
+    padding: '8px 30px',
+    cursor: 'pointer',
+  }}
+>
+  <Box as="span" flex='1' textAlign='center'>
+    Show all my orders
+  </Box>
+</AccordionButton>
+
+          </h2>
+          <AccordionPanel pb={4}>
+            {orders.map((order) => (
+              <DisplayOrderCard
+                key={order.orderId}
+                order={order}
+                onCancelOrder={handleCancelOrder}
+              />
+            ))}
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
     </div>
   );
 };

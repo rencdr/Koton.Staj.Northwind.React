@@ -3,11 +3,12 @@ import axios from 'axios';
 
 const useAddToCart = () => {
   const [notification, setNotification] = useState<string | null>(null);
-  const [quantity, setQuantity] = useState<number>(1); // Başlangıçta 1 ürün
   const userId = localStorage.getItem('userId');
 
-  const addToCart = async (productName: string, productID: number, quantity: number) => {
+  const addToCart = async (productName: string, productID: number) => {
     try {
+      let quantity = 1; // Her zaman 1 ürün ekliyoruz
+
       if (userId) {
         const response = await axios.post(
           'http://localhost:5221/api/Cart/addProductToCart',
@@ -32,16 +33,6 @@ const useAddToCart = () => {
     }
   };
 
-  const increaseQuantity = () => {
-    setQuantity(quantity + 1);
-  };
-
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
-
   const clearNotification = () => {
     setNotification(null);
   };
@@ -51,9 +42,6 @@ const useAddToCart = () => {
     notification,
     clearNotification,
     userId,
-    quantity,
-    increaseQuantity,
-    decreaseQuantity,
   };
 };
 

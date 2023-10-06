@@ -1,7 +1,7 @@
 .cart-card {
-    border: 1px solid #ddd;
-    padding: 16px;
-    margin: 16px 0;
+    border: 2px solid #ddd;
+    padding: 56px;
+    margin: 8px 0;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -9,16 +9,18 @@
   .cart-card h3 {
     font-size: 1.2rem;
     margin-bottom: 8px;
+    text-align: center;
   }
   
   .cart-card p {
-    margin: 4px 0;
+    margin: 8px 0;
+    text-align: center;
   }
   
   .cart-card button {
     border-radius: 8px;
     padding: 2px;
-    padding: 12px 20px;
+    padding: 16px 20px;
     border: 2px solid black;
     cursor: pointer;
     margin-left: 2px;

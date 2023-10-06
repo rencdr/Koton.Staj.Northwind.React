@@ -1,0 +1,37 @@
+.authentication-container {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    transition: background-color 0.3s;
+    background-color: #ffffff;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .authentication-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  
+  .authentication-container input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .authentication-container button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin: 2px;
+  }
+  
+  .authentication-container button:hover {
+    background-color: gray;
+  }
+  

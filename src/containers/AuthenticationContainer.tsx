@@ -5,6 +5,7 @@ import { Button } from '@chakra-ui/react';
 import Input from '../components/atoms/Input';
 import { login, logout } from '../redux/actions/AuthActions';
 import { RootState } from '../redux/store';
+import './AuthenticationContainerStyle.css';
 
 const AuthenticationContainer: React.FC = () => {
   const {
@@ -35,7 +36,7 @@ const AuthenticationContainer: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="authentication-container">
       <h2>Authentication</h2>
       {successMessage && (
         <p style={{ color: 'green' }}>Welcome {userId}!</p>
