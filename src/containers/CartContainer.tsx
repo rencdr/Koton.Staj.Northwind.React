@@ -74,7 +74,7 @@ const CartContainer: React.FC = () => {
           <div className="cart-items">
             {cartItems.map((item) => (
               <DisplayCartCard
-                
+              images={item.images}
                 key={item.productId}
                 productName={item.productName}
                 quantity={item.quantity}

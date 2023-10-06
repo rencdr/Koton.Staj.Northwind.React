@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import getOrder from '../hooks/getOrder';
 import useCancelOrder from '../hooks/cancelOrder';
+import './DisplayOrderContainerStyle.css'
 import {
   Accordion,
   AccordionItem,
@@ -63,7 +64,7 @@ const DisplayOrderContainer = () => {
 
   return (
     <div>
-      <h2>Orders List</h2>
+    <h2 className="header">Orders List</h2>
       <Accordion allowMultiple>
         <AccordionItem>
           <h2>
@@ -73,7 +74,7 @@ const DisplayOrderContainer = () => {
     color: 'white',
     border: 'none',
     borderRadius: '4px',
-    padding: '8px 30px',
+    padding: '13px 30px',
     cursor: 'pointer',
   }}
 >
@@ -84,7 +85,7 @@ const DisplayOrderContainer = () => {
 
           </h2>
           <AccordionPanel pb={4}>
-            {orders.map((order) => (
+            {orders && orders.map((order) => (
               <DisplayOrderCard
                 key={order.orderId}
                 order={order}

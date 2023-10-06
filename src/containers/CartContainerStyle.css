@@ -5,29 +5,33 @@
     flex-direction: column;
     align-items: center;
     justify-content: center; 
+    font-weight: bold;
+    font-size: 16px;
 
   }
   
   .cart-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
   }
   
   .clear-cart-button {
     border-radius: 8px;
-    padding: 12px 20px;
+    padding: 12px 30px;
     border: 2px solid black;
     cursor: pointer;
     margin-left: 2px;
     color: white;
     background-color: black;
     transition: background-color 0.3s, border-color 0.3s;
+    font-weight: bold;
+    text-align: center;
   }
   
   .clear-cart-button:hover {
-    background-color: black;
-    color: white;
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
     border-color: transparent;
   }
   

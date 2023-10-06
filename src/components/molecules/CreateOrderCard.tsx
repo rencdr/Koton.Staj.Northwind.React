@@ -27,37 +27,30 @@ const CreateOrderCard: React.FC<CreateOrderCardProps> = ({ onCreateOrder }) => {
   return (
     <div className="create-order-card">
       {/* <h2>Create Order</h2> */}
-      <div>
+      <div className="create-order-card-content"> {/* content sınıfını ekleyin */}
         <label>Address:</label>
         <input
           type="text"
           value={userAddress}
           onChange={(e) => setUserAddress(e.target.value)}
+          className="create-order-card-input" 
         />
       </div>
-      <div>
+      <div className="create-order-card-content"> 
         <label>Phone Number:</label>
         <input
           type="text"
           value={userPhoneNumber}
           onChange={(e) => setUserPhoneNumber(e.target.value)}
+          className="create-order-card-input" 
         />
       </div>
-
-      <Box
-        as="button"
-        bg="black"
-        color="white"
-        px={4}
-        py={2}
-        borderRadius="md"
-        _hover={{ bg: 'gray.800' }}
-        onClick={handleOrderSubmit}
-      >
-        Create Order
-      </Box>
+      <button className='create-order-card button' onClick={handleOrderSubmit}>Create Order</button>
+  
+      
     </div>
   );
+  
 };
 
 export default CreateOrderCard;

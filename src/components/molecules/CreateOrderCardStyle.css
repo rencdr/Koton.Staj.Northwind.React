@@ -1,7 +1,7 @@
 .create-order-card {
   border: 2px solid #ddd;
-  padding: 26px;
-  margin: 16px 0;
+  padding: 56px;
+  margin: 8px 0;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -9,29 +9,42 @@
 .create-order-card h2 {
   font-size: 1.2rem;
   margin-bottom: 8px;
+  text-align: center;
+
 }
 
 .create-order-card label {
   display: block;
   margin-bottom: 2px;
+  
 }
 
 .create-order-card input {
   width: 100%;
-  max-width: 400px; 
-  height: 20px; 
-  padding: 1px;
+  max-width: 400px;
+  padding: 8px;
   margin-bottom: 8px;
+  border: 1px solid black;
+  border-radius: 8px;
+  
 }
-
 
 .create-order-card button {
   background-color: black;
   color: white;
   border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
+  border-radius: 8px;
+  padding: 12px 56px;
   cursor: pointer;
+  transition: background-color 0.3s; /* Geçiş süresi ekliyoruz */
+}
+
+.create-order-card button:hover {
+  background-color: green; /* Hover durumunda arka plan rengini yeşil olarak ayarlıyoruz */
 }
 
 
+.create-order-card .content {
+  padding: 20px; /* İçeriği ayarlamak için içeriğe özel bir sınıf ekleyin */
+  flex: 1; /* İçeriği kartın geri kalan kısmını kaplayacak şekilde genişletmek için flex kullanın */
+}

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import useCreateOrderHook from '../hooks/createOrder';
 import { Box } from '@chakra-ui/react';
 import CreateOrderCard from '../components/molecules/CreateOrderCard';
+import './OrderContainerStyle.css';
 
 const OrderContainer = () => {
   const [userAddress, setUserAddress] = useState('');
@@ -47,7 +48,7 @@ const OrderContainer = () => {
 
   return (
     <div>
-      <h2>Create Order</h2>
+      <h2 className='header'>Create Order</h2>
       <CreateOrderCard onCreateOrder={handleOrderSubmit} />
 
       {/* Bildirim div'i */}

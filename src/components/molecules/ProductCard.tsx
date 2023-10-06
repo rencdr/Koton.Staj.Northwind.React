@@ -22,7 +22,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         {/* <Text className="product-text">Category: {product.categoryName}</Text> */}
         <Text className="product-text">Price: ${product.unitPrice}</Text>
         {/* <Text className="product-text">Description: {product.description}</Text> */}
-        <Button className="black-button" onClick={handleAddToCart} >Add to Cart</Button>
+        <Button className="add-button" onClick={handleAddToCart} >Add to Cart</Button>
         {notification && (
          <p className="notification">{`${userId}: ${notification}`}</p>
        )}
