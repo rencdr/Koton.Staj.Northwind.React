@@ -1,0 +1,58 @@
+/* ChatBotContainerStyle.css */
+
+.chat-container {
+    width: 550px; /* ChatBot bileşeninin genişliğini belirleyin */
+    height: 65px;
+    background-color: #d7dad6; /* Arkaplan rengini ayarlayın */
+    border: 2px solid #000000; /* Kenarlık ekleyin */
+    border-radius: 4px; /* Köşeleri yuvarlayın */
+    padding: 8px; /* İçerik etrafındaki boşluğu ayarlayın */
+  }
+  
+  .messages {
+    overflow-y: auto; /* Dikey kaydırma çubuğunu ekleyin, gerektiğinde kaydırma yapabilsin */
+
+  }
+  
+  .message {
+    background-color: #ffffff; /* Mesaj arkaplan rengini ayarlayın */
+    margin-bottom: 1px; /* Mesajlar arası boşluğu ayarlayın */
+    padding: 4px; /* Mesaj içeriği etrafındaki boşluğu ayarlayın */
+    border-radius: 4px; /* Mesaj köşelerini yuvarlayın */
+    height: 20px;
+    font-size: 10px;
+  }
+  
+  .input-container {
+    display: flex; /* Giriş kutusu ve düğme yan yana görünsün */
+    margin-top: 8px; /* Giriş kutusu ile üst boşluğu ayarlayın */
+    height: 10px;
+    
+  }
+  
+  input[type="text"] {
+    flex-grow: 1; /* Giriş kutusunun tüm kullanılabilir alanı kaplamasını sağlayın */
+    padding: 8px; /* Giriş kutusu içeriği etrafındaki boşluğu ayarlayın */
+    border: 1px solid #ffffff; /* Giriş kutusu kenarlığını ekleyin */
+    border-radius: 4px; /* Giriş kutusu köşelerini yuvarlayın */
+    height: 10px;
+    font-size: 10px;
+
+  }
+  
+  button {
+    margin-left: 6px; /* Düğme ile giriş kutusu arasındaki boşluğu ayarlayın */
+    padding: 6px 16px; /* Düğme içeriği etrafındaki boşluğu ayarlayın */
+    color: #000000; /* Düğme metin rengini ayarlayın */
+    border: 1px; /* Düğme kenarlığını kaldırın */
+    border-radius: 2px; /* Düğme köşelerini yuvarlayın */
+    cursor: pointer; /* Düğme üzerine gelindiğinde imlecin el göstergesi olmasını sağlayın */
+    font-size: 12px;
+
+  }
+  
+ 
+
+  
+ 
+  

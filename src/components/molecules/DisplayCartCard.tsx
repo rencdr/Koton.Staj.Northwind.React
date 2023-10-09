@@ -7,7 +7,7 @@ interface DisplayCartCardProps {
   quantity: number;
   unitPrice: number;
   productId: number;
-  images: string; // Görsel veriyi içeren bir images prop'u ekleyin
+  images: string; 
   onRemoveProduct: (productId: number) => void;
 }
 
@@ -16,7 +16,7 @@ const DisplayCartCard: React.FC<DisplayCartCardProps> = ({
   quantity,
   unitPrice,
   productId,
-  images, // Görsel veriyi images prop'u olarak alın
+  images, 
   onRemoveProduct,
 }) => {
   const totalPrice = unitPrice * quantity;

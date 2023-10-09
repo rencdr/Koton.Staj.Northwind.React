@@ -11,7 +11,6 @@ const ProductCard = ({ product }: { product: Product }) => {
     addToCart(product.productName, product.productID);
     setTimeout(clearNotification, 2000);
   };
-
   return (
     <Card  variant="outline"  zIndex={0}>
       <CardHeader>

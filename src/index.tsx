@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { ChakraProvider } from '@chakra-ui/react';
+import Navbar from './components/atoms/Navbar';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,6 +16,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <Provider store={store}>
     <ChakraProvider>
+
 
     <App />
 

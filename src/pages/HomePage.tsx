@@ -3,6 +3,7 @@ import useData from '../hooks/getData';
 import BannerHeader from ".././components/atoms/BannerHeader";
 import HomeProductContainer from "../containers/HomeProductContainer";
 import './HomePageStyle.css'; 
+import ChatBotContainer from '../containers/ChatBotContainer';
 
 const HomePage: React.FC = () => {
   

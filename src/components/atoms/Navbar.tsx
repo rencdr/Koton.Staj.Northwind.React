@@ -5,7 +5,7 @@ import carticon from '../../icons/carticon.png';
 import authicon from '../../icons/authicon.png';
 import northlogofast from '../../icons/logoNorth.png';
 import './NavbarStyle.css'; 
-
+import ChatBotContainer from '../../containers/ChatBotContainer';
 const Navbar: React.FC = () => {
   return (
     <Flex as="nav" align="center" justify="space-between" p="4" borderBottom="1px solid #ccc" className="navbar" zIndex={1}>
@@ -24,6 +24,10 @@ const Navbar: React.FC = () => {
           </Link>
         </BreadcrumbItem>
       </Breadcrumb>
+
+      <div className="chatbot">
+          <ChatBotContainer />
+        </div>
 
       <Flex align="center">
         <Link to="/cart" className="cart-image">
