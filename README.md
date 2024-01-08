@@ -48,4 +48,10 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 APP IMAGES
 ![n1](https://github.com/rencdr/Koton.Staj.Northwind.React/assets/136993870/38c5476c-5bbc-4521-b7bf-8e658da2750f)
 
+![n2](https://github.com/rencdr/Koton.Staj.Northwind.React/assets/136993870/c2025f0c-f7da-47a6-a8b4-ebe257cafd73)
+
+![n3](https://github.com/rencdr/Koton.Staj.Northwind.React/assets/136993870/5e4a8a66-d61a-4687-8852-858c5ee4f975)
+
+
+![n4](https://github.com/rencdr/Koton.Staj.Northwind.React/assets/136993870/f429f251-ad44-435a-9e2d-afd1623c3811)
 
